@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: #07131e; color: #e6f1f5; }
+button, input, select { font: inherit; }
+button { cursor: pointer; }
+.page-shell { @apply mx-auto max-w-7xl px-5 py-10 lg:px-8 lg:py-14; }
+.eyebrow { @apply text-[11px] font-bold uppercase tracking-[0.22em] text-mint; }
+.panel { @apply rounded-xl border border-line bg-panel/90 p-5 shadow-lg shadow-black/10; }
+.btn-primary { @apply inline-flex items-center justify-center gap-3 rounded-lg bg-mint px-5 py-3 text-sm font-bold text-ink transition hover:bg-white; }
+.btn-secondary { @apply inline-flex items-center justify-center gap-2 rounded-lg border border-line bg-white/5 px-4 py-2.5 text-sm font-semibold text-slate-100 transition hover:border-mint hover:text-mint; }
+.field-label { @apply mb-2 block text-xs font-bold uppercase tracking-wider text-slate-400; }
+.field-input { @apply w-full rounded-lg border border-line bg-ink px-3 py-2.5 text-sm text-white outline-none transition focus:border-mint focus:ring-1 focus:ring-mint; }
+.field-help { @apply mt-1.5 text-xs leading-relaxed text-slate-500; }
+.data-table { @apply w-full min-w-[700px] border-collapse text-left text-xs; }
+.data-table th { @apply border-b border-line bg-white/5 px-3 py-3 font-bold uppercase tracking-wider text-slate-400; }
+.data-table td { @apply border-b border-line/70 px-3 py-3 align-top text-slate-200; }
+.data-table tr:last-child td { @apply border-b-0; }
+@media print {
+  :root { color-scheme: light; }
+  html, body { background: #fff !important; color: #142433 !important; }
+  .print\:hidden { display: none !important; }
+  .page-shell { max-width: none; padding: 0 !important; }
+  .panel { border: 1px solid #cbd5e1 !important; background: #fff !important; box-shadow: none !important; break-inside: avoid; }
+  .text-slate-400, .text-slate-500, .text-slate-300, .text-slate-200, .text-mint, .text-sky, .text-amber { color: #334155 !important; }
+  .data-table th { background: #f1f5f9 !important; color: #334155 !important; }
+  .data-table td { color: #142433 !important; }
+  .report-section { break-inside: avoid; margin-bottom: 1rem; }
+  .report-page-break { break-before: page; }
+  @page { size: A4; margin: 14mm; }
+}
